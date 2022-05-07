@@ -4,11 +4,13 @@ It echoes any incoming text messages.
 """
 
 import logging
+
+import config
 from info import *
 
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = '5304126624:AAGM_2TJQC0Idrvv4fCmZAWk9CtpxmtM6Hg'
+API_TOKEN = config.token
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
