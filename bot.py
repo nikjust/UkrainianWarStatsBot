@@ -37,7 +37,7 @@ def format_date(date):
     date_time = date.strftime("%d_%m_20%y")
     return date_time
 
-@dp.message_handler(commands=['инфа'])
+@dp.message_handler(commands=['инфа',"info"])
 async def today_command(message: types.Message):
     date_time = format_date(message.get_args())
     print(date_time)
@@ -45,6 +45,10 @@ async def today_command(message: types.Message):
 
     await message.reply(info_day(date_time), parse_mode="markdown")
     await bot.send_photo(message.chat.id, f"https://opermap.mash.ru/tiles/{date_time}/l1/01/l1_01_01.jpg")
+
+@dp.message_handler(commands=['start'])
+async def today_command(message: types.Message):
+    await message.reply("", parse_mode="markdown")
 
 
 

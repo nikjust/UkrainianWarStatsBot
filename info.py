@@ -24,5 +24,5 @@ def info_day(day: str):
                      "\n*🔔События🔔*:\n▪️ " \
                      f"{newline.join(str(hotspot['title']) for hotspot in hotspots)}"
               return text
-       except:
-              pass
+       except Exception as e:
+              return f"Ошибка :( -> \n {e}"
